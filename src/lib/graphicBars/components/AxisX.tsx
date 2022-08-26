@@ -38,7 +38,7 @@ export const AxisX = ({
       />
       {/* tooltip of axis Y */}
       <text
-        x={(widthBar + padding) * (index + 0.1)} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
+        x={(widthBar + padding) * (index + 0.4)} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
         y={maxValue + 3} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
         style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
       >

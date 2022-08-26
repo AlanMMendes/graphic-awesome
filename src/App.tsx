@@ -12,6 +12,8 @@ function App() {
     { value: 70, month: "Jul" },
     { value: 80, month: "Aug" },
     { value: 90, month: "Sep" },
+    { value: 100, month: "Sep" },
+    { value: 110, month: "Sep" },
   ];
   return (
     <div className="App">
