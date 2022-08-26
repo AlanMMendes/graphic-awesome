@@ -6,19 +6,19 @@ import { Bars } from "./components/Bars";
 type Props = {
   widthBar: number;
   array: any[];
-  padding: number;
+  paddingBar: number;
   widthGraphic: any;
   heightGraphic: any;
-  value: any;
+  paddingY: any;
 };
 
 export const GraphicBar = ({
   widthBar,
   array,
-  padding,
+  paddingBar,
   widthGraphic,
   heightGraphic,
-  value,
+  paddingY,
 }: Props) => {
   const maxValue = Math.max(...array.map(({ value }) => value));
 
@@ -34,7 +34,7 @@ export const GraphicBar = ({
             <Bars
               incrementId={index}
               widthBar={widthBar}
-              padding={padding}
+              padding={paddingBar}
               item={item}
               maxValue={maxValue}
               index={index}
@@ -42,7 +42,7 @@ export const GraphicBar = ({
 
             <AxisX
               widthBar={widthBar}
-              padding={padding}
+              padding={paddingBar}
               item={item}
               maxValue={maxValue}
               index={index}
@@ -51,7 +51,7 @@ export const GraphicBar = ({
           </Fragment>
         ))}
 
-        <AxisY maxValue={maxValue} values={value} />
+        <AxisY maxValue={maxValue} padding={paddingY} />
       </svg>
     </Fragment>
   );

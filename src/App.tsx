@@ -18,11 +18,11 @@ function App() {
       <h1>Bar Graphic</h1>
       <GraphicBar
         widthBar={10}
-        padding={2}
+        paddingBar={2}
         array={array}
         widthGraphic={500}
         heightGraphic={500}
-        value={10}
+        paddingY={10}
       />
     </div>
   );

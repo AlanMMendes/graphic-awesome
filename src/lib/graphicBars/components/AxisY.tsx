@@ -1,25 +1,24 @@
 type Props = {
   maxValue: any;
-  values: any;
+  padding: any;
 };
 
-export const AxisY = ({ maxValue, values }: Props) => {
+export const AxisY = ({ maxValue, padding }: Props) => {
   function SmallLine(): any {
     const array = [];
-    var padding = 0;
-    while (padding <= maxValue) {
+    for (var valueY = 0; valueY <= maxValue; valueY = valueY + padding) {
       array.push(
         <line
-          key={padding}
+          key={valueY}
           x1={0} // x initial position of the line (might become a prop)
-          y1={padding} // y initial position of the line (might become a prop)
+          y1={valueY} // y initial position of the line (might become a prop)
           x2={-1} // x final position of the line (might become a prop) <---
-          y2={padding} // y final position of the line (might become a prop)
+          y2={valueY} // y final position of the line (might become a prop)
           stroke="black" // color of the line (might become a prop)
           strokeWidth="0.2" // width of the line (might become a prop)
         />
       );
-      padding = padding + values;
+      valueY = valueY + padding;
     }
     return array;
   }
@@ -35,9 +34,9 @@ export const AxisY = ({ maxValue, values }: Props) => {
         stroke="black"
         strokeWidth="0.3"
       />
-
       {/* Small line of axys Y */}
       <SmallLine />
+      {[<p>bom dia</p>, <p>boa tarde</p>]}
 
       {/* text  of axis Y */}
       {/* <text
