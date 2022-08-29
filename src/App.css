@@ -1,5 +1,39 @@
 .App {
   text-align: center;
+  background-color: #312e81;
+  color: white;
+}
+
+.Bar {
+  fill: #4f46e5;
+}
+
+.BarTip {
+  fill: #fff;
+}
+
+.XSmallLine {
+  stroke: #fff;
+}
+
+.XLine {
+  stroke: #fff;
+}
+
+.XTip {
+  fill: #fff;
+}
+
+.YSmallLine {
+  stroke: #fff;
+}
+
+.YLine {
+  stroke: #fff;
+}
+
+.YTip {
+  fill: #fff;
 }
 
 .App-logo {
@@ -32,6 +66,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
