@@ -8,11 +8,12 @@ type Props = {
 export const AxisY = ({ maxValue, padding }: Props) => {
   function SmallLine(): any {
     const array = [];
-    for (var valueY = 0; valueY <= maxValue; valueY = valueY + padding) {
+    for (var valueY = 0; valueY < maxValue; valueY = valueY + padding) {
       array.push(
-        <Fragment>
+        <Fragment
+          key={valueY}
+        >
           <line
-            key={valueY}
             x1={0} // x initial position of the line (might become a prop)
             y1={valueY} // y initial position of the line (might become a prop)
             x2={-1} // x final position of the line (might become a prop) <---
@@ -29,8 +30,28 @@ export const AxisY = ({ maxValue, padding }: Props) => {
           </text>
         </Fragment>
       );
-      valueY = valueY + padding;
     }
+    array.push([
+      <Fragment
+        key={maxValue}
+      >
+        <line
+          x1={0} // x initial position of the line (might become a prop)
+          y1={maxValue} // y initial position of the line (might become a prop)
+          x2={-1} // x final position of the line (might become a prop) <---
+          y2={maxValue} // y final position of the line (might become a prop)
+          stroke="black" // color of the line (might become a prop)
+          strokeWidth="0.2" // width of the line (might become a prop)
+        />
+        <text
+          x={-5} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
+          y={maxValue} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
+          style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
+        >
+          0
+        </text>
+      </Fragment>
+    ])
     return array;
   }
 
