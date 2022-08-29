@@ -14,6 +14,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
           key={valueY}
         >
           <line
+            className="YSmallLine"
             x1={0} // x initial position of the line (might become a prop)
             y1={valueY} // y initial position of the line (might become a prop)
             x2={-1} // x final position of the line (might become a prop) <---
@@ -22,6 +23,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
             strokeWidth="0.2" // width of the line (might become a prop)
           />
           <text
+            className="YTip"
             x={-5} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
             y={valueY} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
             style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
@@ -36,6 +38,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
         key={maxValue}
       >
         <line
+          className="YSmallLine"
           x1={0} // x initial position of the line (might become a prop)
           y1={maxValue} // y initial position of the line (might become a prop)
           x2={-1} // x final position of the line (might become a prop) <---
@@ -44,6 +47,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
           strokeWidth="0.2" // width of the line (might become a prop)
         />
         <text
+          className="YTip"
           x={-5} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
           y={maxValue} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
           style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
@@ -58,6 +62,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
   return (
     <>
       <line
+        className="YLine"
         x1="0"
         y1="0"
         x2="0"

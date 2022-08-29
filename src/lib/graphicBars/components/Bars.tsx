@@ -53,6 +53,7 @@ export const Bars = ({
     <>
       <rect
         id={incrementId + "rect"}
+        className="Bar"
         width={widthBar} // width of each bar
         height={item?.value} // height of each bar
         x={(widthBar + padding) * (index + 0.1)} // x position of each bar
@@ -72,6 +73,7 @@ export const Bars = ({
       </text>
 
       <text
+        className="BarTip"
         x={(widthBar + padding) * (index + 0.3)} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop)
         y={maxValue - item?.value - 1} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
         style={{ fontSize: "3px" }} // style of the tooltip  (might become a prop)
