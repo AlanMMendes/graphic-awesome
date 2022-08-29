@@ -25,7 +25,7 @@ export const GraphicBar = ({
   return (
     <Fragment>
       <svg
-        viewBox="-50 -10 200 100"
+        viewBox="-50 -10 200 200"
         width={widthGraphic}
         height={heightGraphic}
       >
