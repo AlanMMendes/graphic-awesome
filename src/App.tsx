@@ -12,8 +12,8 @@ function App() {
     { value: 70, month: "Jul" },
     { value: 80, month: "Aug" },
     { value: 90, month: "Sep" },
-    { value: 100, month: "Sep" },
-    { value: 110, month: "Sep" },
+    { value: 130, month: "Sep" },
+    { value: 163, month: "Sep" },
   ];
   return (
     <div className="App">
@@ -21,10 +21,10 @@ function App() {
       <GraphicBar
         widthBar={10}
         paddingBar={2}
+        paddingY={array.length}
+        widthGraphic={1000}
+        heightGraphic={1000}
         array={array}
-        widthGraphic={500}
-        heightGraphic={500}
-        paddingY={10}
       />
     </div>
   );
