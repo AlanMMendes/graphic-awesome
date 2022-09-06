@@ -1,18 +1,16 @@
 import { Fragment } from "react";
 
 type Props = {
-  maxValue: any;
   padding: any;
+  maxHeight: any;
 };
 
-export const AxisY = ({ maxValue, padding }: Props) => {
+export const AxisY = ({ padding, maxHeight }: Props) => {
   function SmallLine(): any {
     const array = [];
-    for (var valueY = 0; valueY < maxValue; valueY = valueY + padding) {
+    for (var valueY = 0; valueY < maxHeight; valueY = valueY + padding) {
       array.push(
-        <Fragment
-          key={valueY}
-        >
+        <Fragment key={valueY}>
           <line
             className="YSmallLine"
             x1={0} // x initial position of the line (might become a prop)
@@ -28,34 +26,32 @@ export const AxisY = ({ maxValue, padding }: Props) => {
             y={valueY} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
             style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
           >
-            {maxValue - valueY}
+            {maxHeight - valueY}
           </text>
         </Fragment>
       );
     }
     array.push([
-      <Fragment
-        key={maxValue}
-      >
+      <Fragment key={maxHeight}>
         <line
           className="YSmallLine"
           x1={0} // x initial position of the line (might become a prop)
-          y1={maxValue} // y initial position of the line (might become a prop)
+          y1={maxHeight} // y initial position of the line (might become a prop)
           x2={-1} // x final position of the line (might become a prop) <---
-          y2={maxValue} // y final position of the line (might become a prop)
+          y2={maxHeight} // y final position of the line (might become a prop)
           stroke="black" // color of the line (might become a prop)
           strokeWidth="0.2" // width of the line (might become a prop)
         />
         <text
           className="YTip"
           x={-5} // centers  the text above the graphic aka tooltip, 0.3 to adjust left or right (might become a prop) also controls the range value of the X axis
-          y={maxValue} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
+          y={maxHeight} // position of the text above the graphic aka tooltip, -1 to put the text above the bar (might become a prop)
           style={{ fontSize: "2px" }} // style of the tooltip  (might become a prop)
         >
           0
         </text>
-      </Fragment>
-    ])
+      </Fragment>,
+    ]);
     return array;
   }
 
@@ -66,7 +62,7 @@ export const AxisY = ({ maxValue, padding }: Props) => {
         x1="0"
         y1="0"
         x2="0"
-        y2={maxValue}
+        y2={maxHeight}
         stroke="black"
         strokeWidth="0.3"
       />

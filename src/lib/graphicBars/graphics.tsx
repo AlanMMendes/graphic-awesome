@@ -10,6 +10,10 @@ type Props = {
   widthGraphic: any;
   heightGraphic: any;
   paddingY: any;
+  minX: any;
+  minY: any;
+  maxWidth: any;
+  maxHeight: any;
 };
 
 export const GraphicBar = ({
@@ -19,13 +23,17 @@ export const GraphicBar = ({
   widthGraphic,
   heightGraphic,
   paddingY,
+  minX,
+  minY,
+  maxWidth,
+  maxHeight,
 }: Props) => {
   const maxValue = Math.max(...array.map(({ value }) => value));
 
   return (
     <Fragment>
       <svg
-        viewBox="-50 -10 200 200"
+        viewBox={`${minX} ${minY} ${maxWidth} ${maxHeight}`}
         width={widthGraphic}
         height={heightGraphic}
       >
@@ -38,6 +46,8 @@ export const GraphicBar = ({
               item={item}
               maxValue={maxValue}
               index={index}
+              maxHeight={maxHeight}
+              maxWidth={maxWidth}
             />
 
             <AxisX
@@ -47,11 +57,13 @@ export const GraphicBar = ({
               maxValue={maxValue}
               index={index}
               array={array}
+              maxWidth={maxWidth}
+              maxHeight={maxHeight}
             />
           </Fragment>
         ))}
 
-        <AxisY maxValue={maxValue} padding={paddingY} />
+        <AxisY maxHeight={maxHeight} padding={paddingY} />
       </svg>
     </Fragment>
   );
